@@ -77,7 +77,7 @@ Queue.prototype.peek = function() {
 };
 
 Queue.prototype.count = function() {
-  // implement me...
+  return this.index - this.toBeRemoved;
 };
 // Time complexity:
 
