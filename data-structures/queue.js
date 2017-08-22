@@ -54,15 +54,18 @@ function Queue(capacity) {
   this.storage = {};
   this.index = 0;
   this.toBeRemoved = 0;
+  this.maxCapacity = capacity;
 }
 
 Queue.prototype.enqueue = function(value) {
-  if (this.index >= 0) {
+  if (this.index < this.maxCapacity) {
     this.storage[this.index] = value;
     this.index++;
+  } else {
+    return `There is no more room in the queue.`;
   }
 };
-// Time complexity:
+// Time complexity: O(n)
 
 Queue.prototype.dequeue = function() {
   if (this.toBeRemoved <= this.index) {
@@ -70,7 +73,7 @@ Queue.prototype.dequeue = function() {
     this.toBeRemoved++;
   }
 };
-// Time complexity:
+// Time complexity: O(n)
 
 Queue.prototype.peek = function() {
   return this.storage[this.toBeRemoved];
@@ -79,7 +82,7 @@ Queue.prototype.peek = function() {
 Queue.prototype.count = function() {
   return this.index - this.toBeRemoved;
 };
-// Time complexity:
+// Time complexity: O(n)
 
 
 
