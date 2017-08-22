@@ -51,16 +51,24 @@ What's the time complexity?
  */
 
 function Queue(capacity) {
-  // implement me...
+  this.storage = {};
+  this.index = 0;
+  this.toBeRemoved = 0;
 }
 
 Queue.prototype.enqueue = function(value) {
-  // implement me...
+  if (this.index >= 0) {
+    this.storage[this.index] = value;
+    this.index++;
+  }
 };
 // Time complexity:
 
 Queue.prototype.dequeue = function() {
-  // implement me...
+  if (this.toBeRemoved <= this.index) {
+    delete this.storage[this.toBeRemoved];
+    this.toBeRemoved++;
+  }
 };
 // Time complexity:
 
