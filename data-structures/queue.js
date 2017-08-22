@@ -65,7 +65,7 @@ Queue.prototype.enqueue = function(value) {
     return `There is no more room in the queue.`;
   }
 };
-// Time complexity: O(n)
+// Time complexity: O(1)
 
 Queue.prototype.dequeue = function() {
   if (this.toBeRemoved <= this.index) {
@@ -73,7 +73,7 @@ Queue.prototype.dequeue = function() {
     this.toBeRemoved++;
   }
 };
-// Time complexity: O(n)
+// Time complexity: O(1)
 
 Queue.prototype.peek = function() {
   return this.storage[this.toBeRemoved];
@@ -82,8 +82,17 @@ Queue.prototype.peek = function() {
 Queue.prototype.count = function() {
   return this.index - this.toBeRemoved;
 };
-// Time complexity: O(n)
+// Time complexity: O(1)
 
+Queue.prototype.contains = function(value) {
+  for (var key in this.storage) {
+    if (this.storage[key] === value) {
+      return true;
+    }
+  }
+  return false;
+}
+// Time complexity: O(n)
 
 
 /*
