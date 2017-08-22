@@ -64,8 +64,10 @@ Stack.prototype.push = function(value) {
 // Time complexity:
 
 Stack.prototype.pop = function() {
-
-  // implement me...
+  if (this.index >= 1) {
+    delete this.storage[this.index];
+    this.index--;
+  }
 };
 // Time complexity:
 
@@ -75,7 +77,7 @@ Stack.prototype.peek = function() {
 // Time complexity:
 
 Stack.prototype.count = function() {
-  // implement me...
+  return this.index;
 };
 // Time complexity:
 
