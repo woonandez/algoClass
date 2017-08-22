@@ -53,12 +53,15 @@ What's the time complexity?
 function Stack(capacity) {
   this.storage = {};
   this.index = 0;
+  this.cap = capacity;
 }
 
 Stack.prototype.push = function(value) {
-  if (this.index >= 0) {
+  if (this.index < this.cap) {
     this.storage[this.index] = value;
     this.index++;
+  } else {
+    return `There is no more room in the stack.`;
   }
 };
 // Time complexity:
