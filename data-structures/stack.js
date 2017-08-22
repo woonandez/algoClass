@@ -51,18 +51,20 @@ What's the time complexity?
  */
 
 function Stack(capacity) {
-  this.storage = '';
+  this.storage = {};
+  this.index = 0;
 }
 
 Stack.prototype.push = function(value) {
-  this.storage += ` ${value}`;
+  if (this.index >= 0) {
+    this.storage[this.index] = value;
+    this.index++;
+  }
 };
 // Time complexity:
 
 Stack.prototype.pop = function() {
-  const arr = this.storage.split(' ');
-  arr[arr.length - 1] = '';
-  this.storage = arr.slice(0, arr.length - 1).join(' ')
+
   // implement me...
 };
 // Time complexity:
