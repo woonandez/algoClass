@@ -86,6 +86,15 @@ Stack.prototype.count = function() {
 };
 // Time complexity: O(1)
 
+Stack.prototype.contains = function(value) {
+  for (var key in this.storage) {
+    if (value === this.storage[key]) {
+      return true;
+    }
+  }
+  return false;
+}
+// time complexity: O(n);
 Stack.prototype.until = function(value) {
   let result;
   for (var key in this.storage) {
@@ -95,8 +104,7 @@ Stack.prototype.until = function(value) {
   }
   return this.index - result;
 }
-
-// Time Complexity: O(n)
+// time complexity: O(n);
 
 /*
 *** Exercises:
