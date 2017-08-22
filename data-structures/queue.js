@@ -73,7 +73,7 @@ Queue.prototype.dequeue = function() {
 // Time complexity:
 
 Queue.prototype.peek = function() {
-  // implement me...
+  return this.storage[this.toBeRemoved];
 };
 
 Queue.prototype.count = function() {
