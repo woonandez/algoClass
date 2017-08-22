@@ -64,7 +64,7 @@ Stack.prototype.push = function(value) {
     return `There is no more room in the stack.`;
   }
 };
-// Time complexity:
+// Time complexity: O(1)
 
 Stack.prototype.pop = function() {
   if (this.index >= 1) {
@@ -72,19 +72,30 @@ Stack.prototype.pop = function() {
     this.index--;
   }
 };
-// Time complexity:
+// Time complexity: O(1)
 
 Stack.prototype.peek = function() {
   if (this.index >= 0) {
     return this.storage[this.index - 1];
   }
 };
-// Time complexity:
+// Time complexity: O(1)
 
 Stack.prototype.count = function() {
   return this.index;
 };
-// Time complexity:
+// Time complexity: O(1)
+
+Stack.prototype.contains = function(value) {
+  for (var key in this.storage) {
+    if (value === this.storage[key]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Time Complexity: O(n)
 
 /*
 *** Exercises:
