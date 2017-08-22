@@ -94,6 +94,17 @@ Queue.prototype.contains = function(value) {
 }
 // Time complexity: O(n)
 
+Queue.prototype.until = function(value) {
+  let result = 0;
+  for (var key in this.storage) {
+    result++;
+    if (this.storage[key] === value) {
+      return Math.abs(this.toBeRemoved - result);
+    }
+  }
+  return `Not Found`;
+}
+// Time complexity: O(n)
 
 /*
 *** Exercises:
