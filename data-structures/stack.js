@@ -86,13 +86,14 @@ Stack.prototype.count = function() {
 };
 // Time complexity: O(1)
 
-Stack.prototype.contains = function(value) {
+Stack.prototype.until = function(value) {
+  let result;
   for (var key in this.storage) {
     if (value === this.storage[key]) {
-      return true;
+      result = parseInt(key);
     }
   }
-  return false;
+  return this.index - result;
 }
 
 // Time Complexity: O(n)
