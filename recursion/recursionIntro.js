@@ -8,6 +8,13 @@ function countDown(n) {
 }
 
 //2. Next, try looping just like above except using recursion
+function countDown(n) {
+  if (n === 0) {
+    return 0;
+  } else {
+    return countDown(n - 1);
+  }
+}
 
 //3.Write a function 'exponent' that takes two arguments base, and expo, uses a while loop to return the exponenet value of the base.
 
