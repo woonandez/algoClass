@@ -17,6 +17,14 @@ function countDown(n) {
 }
 
 //3.Write a function 'exponent' that takes two arguments base, and expo, uses a while loop to return the exponenet value of the base.
+function countDown(base, expo) {
+  let baseResult = base;
+  while(expo) {
+    baseResult = baseResult * base;
+    expo += -1;
+  }
+  return baseResult;
+}
 
 //4. Write a function 'RecursiveExponent' that takes two arguments base, and expo, recursively returns exponent value of the base.
 
