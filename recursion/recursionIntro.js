@@ -19,7 +19,7 @@ function countDown(n) {
 //3.Write a function 'exponent' that takes two arguments base, and expo, uses a while loop to return the exponenet value of the base.
 function exponent(base, expo) {
   let baseResult = base;
-  while(expo) {
+  while (expo) {
     baseResult = baseResult * base;
     expo += -1;
   }
@@ -36,5 +36,13 @@ function countDown(base, expo) {
 }
 
 //5. Write a function 'recursiveMultiplier' that takes two arguments, 'arr and num', and multiplies each arr value into by num and returns an array of the values.
+function recursiveMultiplier(arr, num) {
+  let index = 0;
+  while (index < arr.length) {
+    arr[index] = arr[index] * num;
+    index++;
+  }
+  return arr;
+}
 
 //6. Write a function 'recursiveReverse' that takes an array and uses recursion to return its contents in reverse
