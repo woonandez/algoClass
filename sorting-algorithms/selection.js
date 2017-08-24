@@ -28,3 +28,19 @@ Stable Variant
 - Implement selection sort for a linked list (you can use your data structure implemention from earlier in the course). How does this impact performance and stability?
 
 */
+
+function selectionSort(array) {
+  return array;
+}
+
+
+console.log(selectionSort([4,5,1,10,11,2,2, 40, 30]));
+
+
+
+
+
+
+
+
+

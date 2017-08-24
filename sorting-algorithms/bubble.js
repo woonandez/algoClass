@@ -32,3 +32,7 @@ function bubbleSort(arr, sorted = false) {
   }
   return sorted ? bubbleSort(array, false) : array;
 }
+
+bubbleSort([4,5,1,10,11,2,2, 40, 30]);
+
+// O(n);
