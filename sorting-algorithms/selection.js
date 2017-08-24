@@ -29,8 +29,23 @@ Stable Variant
 
 */
 
-function selectionSort(array) {
-  return array;
+function selectionSort(array, result = []) {
+  let smallestVal = Math.min.apply(null, array);
+  if (array.length === 0) {
+    return result;
+  } else {
+    let newArray;
+    [...array].forEach((val, key) => {
+      if (val === smallestVal) {
+        let sliceArray = array.slice(key);
+        let origArray = array.slice(0, key);
+        sliceArray.shift();
+        newArray = origArray.concat(...sliceArray);
+        result.push(val);
+      }
+    });
+    return selectionSort(newArray, result);
+  }
 }
 
 
