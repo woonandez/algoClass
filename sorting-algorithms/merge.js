@@ -54,4 +54,4 @@ function mergeSort(array) {
 }
 
 
-mergeSort([82,6,2,1,3,7,8,10])
+// mergeSort([82,6,2,1,3,7,8,10])
