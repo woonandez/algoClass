@@ -22,16 +22,26 @@ Variants:
 
 */
 
-function quickSort(arr, lo, hi) {
+function quickSort(arr, lo = 0, hi = array.length - 1) {
   let pivotLoc = lo;
   let pivot = hi;
-  // loop from lo to high
-    // compare pivot to arr[pivotLoc];
-    // if pivot < arr[pivotLoc];
-      // increment the pivLoc;
-    // else
-      // swap arr[pivot] with arr[pivotLoc];
-      // swap arr[pivot] with arr[];
+  if (lo < hi) {
+    let p = partition(array, lo, hi);
+    quicksort(array, lo, p - 1);
+    quicksort(array, p + 1, hi);
+  }
+  if (hi - lo === array.length) {
+    return array;
+  }
+}
 
-
+function partition(arr, lo, hi) {
+  var pivot = arr[hi];
+  var pivotLoc = lo;
+  for (var i = lo; i < hi; i++) {
+    if (arr[i] <= pivot) {
+      swap(arr, pivotLoc, i);
+      pivotLoc++;
+    }
+  }
 }
