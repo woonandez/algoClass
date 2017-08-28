@@ -21,3 +21,17 @@ Variants:
 - Implement a multi-pivot quicksort (ex: partition into 3 subarrays using 2 pivots)
 
 */
+
+function quickSort(arr, lo, hi) {
+  let pivotLoc = lo;
+  let pivot = hi;
+  // loop from lo to high
+    // compare pivot to arr[pivotLoc];
+    // if pivot < arr[pivotLoc];
+      // increment the pivLoc;
+    // else
+      // swap arr[pivot] with arr[pivotLoc];
+      // swap arr[pivot] with arr[];
+
+
+}
