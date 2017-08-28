@@ -29,7 +29,20 @@ subarrays for natural merge sort: [ [1,2], [4,5], [9] ]
 
 */
 
-function mergeSort(l, r) {
+function merge(left, right) {
+  var result = [];
+  var iLeft = 0;
+  var iRight = 0;
+  while (result.length < (left.length + right.length)) {
+    if (iLeft === left.length) result = result.concat(right.slice(iRight));
+    else if (iRight === right.length) result = result.concat(left.slice(iLeft));
+    else if (left[iLeft] <= right[iRight]) result.push(left[iLeft++]);
+    else result.push(right[iRight++]);
+  }
+  return result;
+}
+
+function mergeSort(array) {
   if (array.length <= 1) return array;
 
   var left = array.slice(0, array.length / 2);
@@ -39,3 +52,6 @@ function mergeSort(l, r) {
 
   return merge(leftSorted, rightSorted);
 }
+
+
+mergeSort([82,6,2,1,3,7,8,10])
