@@ -29,3 +29,34 @@ now repeat for next unsorted element
 (https://en.wikipedia.org/wiki/Shellsort)
 
 */
+
+
+function insertionSort(arr) {
+  var result = [];
+  const array = [...arr];
+  array.forEach(v => {
+    console.log(v);
+  })
+  // iterate through the original array one time all the way through
+    // on the nested for loop
+      // if length === 0 push
+      // else if current Val from above is > nested val
+        // then I need to slice the result array up to
+  console.log(array)
+  return result;
+}
+
+console.log(insertionSort([4,5,1,10,11,2,2, 40, 30]));
+
+
+// [1, 6, 8, 2, 5];
+// [1]
+// [6, 8, 2, 5];
+// [1, 6]
+// [ 8, 2, 5];
+// [1, 6, 8]
+// [2, 5];
+// [1, 2, 6, 8]
+// [5]
+// [1, 2 ] [6, 8]
+
