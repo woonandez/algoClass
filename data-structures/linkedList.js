@@ -81,8 +81,8 @@ Reimplement stack and queue data structures using linked lists.
 // PART 1
 
 function Node(value) {
-  this.next = null;
   this.value = value;
+  this.next = null;
 }
 
 function LinkedList(headValue) {
@@ -91,7 +91,11 @@ function LinkedList(headValue) {
 }
 
 LinkedList.prototype.forEach = function(callback) {
-  // implement me...
+  var node = this.head;
+  while (node) {
+    callback(node.value);
+    node = node.next;
+  }
 };
 // Time complexity:
 
