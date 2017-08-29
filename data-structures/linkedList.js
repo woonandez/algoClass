@@ -112,18 +112,18 @@ LinkedList.prototype.print = function() {
 
 
 LinkedList.prototype.insertAfter = function(refNode, value) {
-  this.forEach(node => {
-    if (node.next.value === refNode.value) {
-      let tempNode = node.next;
-      node.next = new Node(value);
-      node.next = tempNode;
-    }
-  })
+  let tempNode = node.next;
+  node.next = new Node(value);
+  refNode.next = tempNode;
+  if (this.tail === node) this.tail = newNext;
+  return newNext;
 };
 // Time complexity: O(n);
 
-LinkedList.prototype.removeAfter = function(node) {
-  // implement me...
+LinkedList.prototype.removeAfter = function(refNode) {
+  let connectNode = refNode.next.next;
+  let refNode.next = connectNode;
+  return refNode.next;
 };
 // Time complexity:
 
@@ -188,9 +188,3 @@ LinkedList.prototype.removeBefore = function(node) {
 // myList.insertAfter(refNode, value)
 // => new node
 // insert new node associated with value passed in after refNode
-
-var addOne = v => v + 1;
-var node = new LinkedList(3);
-node.print()
-node.insertAfter(3, 4);
-
