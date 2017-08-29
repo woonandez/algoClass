@@ -48,13 +48,23 @@ Tree.prototype.addChild = function(value) {
   var newNode = new Tree(value);
   this.children.push(newNode);
 };
-// Time complexity:
+// Time complexity: O(1);
 
 
 Tree.prototype.contains = function(value) {
-  // implement me...
+  let result;
+  (function traverse(node) {
+    if (node.value === value) {
+      return result = `${value} found`;
+    }
+    node.children.forEach(child => {
+      console.log('child', child)
+      traverse(child);
+    });
+  })(this);
+  return result;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {
