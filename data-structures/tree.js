@@ -40,11 +40,13 @@ https://en.wikipedia.org/wiki/Trie
 */
 
 function Tree (value) {
-  // implement me...
+  this.value = value;
+  this.children = [];
 }
 
 Tree.prototype.addChild = function(value) {
-  // implement me...
+  var newNode = new Tree(value);
+  this.children.push(newNode);
 };
 // Time complexity:
 
