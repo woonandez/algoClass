@@ -118,17 +118,20 @@ LinkedList.prototype.insertAfter = function(refNode, value) {
   if (this.tail === node) this.tail = newNext;
   return newNext;
 };
-// Time complexity: O(n);
+// Time complexity: O(1);
 
 LinkedList.prototype.removeAfter = function(refNode) {
   let connectNode = refNode.next.next;
   let refNode.next = connectNode;
   return refNode.next;
 };
-// Time complexity:
+// Time complexity: O(1);
 
 LinkedList.prototype.insertHead = function(value) {
-  // implement me...
+  // keep track of the old head (which contains the entire list);
+  // create a newNode(vaule);
+  // assign this.head to the newNode(value);
+  // this.head.next = old head;
 };
 // Time complexity:
 
