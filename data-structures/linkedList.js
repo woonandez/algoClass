@@ -147,7 +147,11 @@ LinkedList.prototype.removeHead = function() {
 }
 
 LinkedList.prototype.findNode = function(value) {
-  // implement me...
+  this.forEach(val => {
+    if (value === val) {
+      return this;
+    }
+  });
 };
 // Time complexity:
 
