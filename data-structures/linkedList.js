@@ -156,7 +156,12 @@ LinkedList.prototype.findNode = function(value) {
 // Time complexity:
 
 LinkedList.prototype.appendToTail = function(value) {
-  // implement me...
+  this.forEach(val => {
+    if (this.next === null) {
+      let newNode = new Node(value);
+      this.next = newNode;
+    }
+  });
 };
 // Time complexity:
 
