@@ -53,15 +53,16 @@ Tree.prototype.addChild = function(value) {
 
 Tree.prototype.contains = function(value) {
   let result;
+
   (function traverse(node) {
     if (node.value === value) {
       return result = `${value} found`;
     }
     node.children.forEach(child => {
-      console.log('child', child)
       traverse(child);
     });
   })(this);
+
   return result;
 };
 // Time complexity: O(n);
