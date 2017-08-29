@@ -86,7 +86,9 @@ function Node(value) {
 }
 
 function LinkedList(headValue) {
-  if (headValue === undefined) console.log('Must provide value for first node');
+  if (headValue === undefined) {
+    console.log('Must provide value for first node');
+  }
   this.head = new Node(headValue);
 }
 
@@ -97,7 +99,7 @@ LinkedList.prototype.forEach = function(callback) {
     node = node.next;
   }
 };
-// Time complexity:
+// Time complexity: O(n)
 
 LinkedList.prototype.print = function() {
   var result = [];
@@ -106,12 +108,19 @@ LinkedList.prototype.print = function() {
   });
   return result;
 };
-// Time complexity:
+// Time complexity: O(n)
 
-LinkedList.prototype.insertAfter = function(node, value) {
-  // implement me...
+
+LinkedList.prototype.insertAfter = function(refNode, value) {
+  this.forEach(node => {
+    if (node.next.value === refNode.value) {
+      let tempNode = node.next;
+      node.next = new Node(value);
+      node.next = tempNode;
+    }
+  })
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.removeAfter = function(node) {
   // implement me...
@@ -176,3 +185,12 @@ LinkedList.prototype.removeBefore = function(node) {
 1 1 5 6   (1 -> 1 -> 5 -> 6)
 
  */
+// myList.insertAfter(refNode, value)
+// => new node
+// insert new node associated with value passed in after refNode
+
+var addOne = v => v + 1;
+var node = new LinkedList(3);
+node.print()
+node.insertAfter(3, 4);
+
