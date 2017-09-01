@@ -68,8 +68,20 @@ BinarySearchTree.prototype.insert = function(value) {
 // Time complexity:
 
 BinarySearchTree.prototype.contains = function(value) {
-  // implement me...
-};
+  let result;
+
+  (function recurse(node) {
+
+    if (node.value === value) {
+      return result = true;
+    } else if (node.left && node.right) {
+      recurse(node.left);
+      recurse(node.right);
+    }
+  })(this);
+
+  return result;
+}
 // Time complexity:
 
 BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
