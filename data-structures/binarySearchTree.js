@@ -58,7 +58,12 @@ function BinarySearchTree (value) {
 }
 
 BinarySearchTree.prototype.insert = function(value) {
-  // implement me...
+  var newLeaf = new BinarySearchTree(value);
+  if (newLeaf.value < this.value) {
+    this.left = newLeaf;
+  } else {
+    this.right = newLeaf;
+  }
 };
 // Time complexity:
 
