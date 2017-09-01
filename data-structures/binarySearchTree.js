@@ -59,12 +59,21 @@ function BinarySearchTree (value) {
 
 BinarySearchTree.prototype.insert = function(value) {
   var newLeaf = new BinarySearchTree(value);
-  if (newLeaf.value < this.value) {
-    this.left = newLeaf;
-  } else {
-    this.right = newLeaf;
-  }
+
+  (function recurse(node) {
+    if (newLeaf.value < node.value && node.left === null) {
+      return node.left = newLeaf;
+    } else if (newLeaf.value > node.value && node.right === null) {
+      return node.right = newLeaf;
+    } else if (node.left && node.right) {
+      recurse(node.left);
+      recurse(node.right);
+    }
+  })(this);
+
+  return newLeaf.value;
 };
+
 // Time complexity:
 
 BinarySearchTree.prototype.contains = function(value) {
